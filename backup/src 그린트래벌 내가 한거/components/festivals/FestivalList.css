@@ -10,9 +10,7 @@
   padding: 10px;
   background-color: #fff;
   color: #000;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
   gap: 20px;
   text-align: center;
 }
