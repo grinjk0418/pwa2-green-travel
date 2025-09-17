@@ -31,14 +31,13 @@ const festivalSlice = createSlice({
           // state 재할당
           state.list = [...state.list, ...action.payload.items.item];
           state.page = action.payload.pageNo;
+          state.scrollEventFlg = true;
 
           // localstorage 재할당
           localStorageUtil.setFestivalList(state.list);
           localStorageUtil.setFestivalPage(state.page);
           localStorageUtil.setFestivalScrollFlg(state.scrollEventFlg);
 
-
-          state.scrollEventFlg = true;
         } else {
           state.scrollEventFlg = false;
         }
