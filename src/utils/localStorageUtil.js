@@ -1,4 +1,4 @@
-import { KEY_LOCALSTORAGE_CLEAR_DATE, KEY_LOCALSTORAGE_FESTIVAL_FLG, KEY_LOCALSTORAGE_FESTIVAL_LIST, KEY_LOCALSTORAGE_FESTIVAL_PAGE } from "../configs/keys.js";
+import { KEY_LOCALSTORAGE_CLEAR_DATE, KEY_LOCALSTORAGE_FESTIVAL_FLG, KEY_LOCALSTORAGE_FESTIVAL_LIST, KEY_LOCALSTORAGE_FESTIVAL_PAGE, KEY_LOCALSTORAGE_STAY_FLG, KEY_LOCALSTORAGE_STAY_LIST, KEY_LOCALSTORAGE_STAY_PAGE } from "../configs/keys.js";
 
 export const localStorageUtil = {
   // 책임 중심적 설계시 코드 작성 방법
@@ -61,16 +61,51 @@ export const localStorageUtil = {
    */
   getClearDate: () => {
     return localStorage.getItem(KEY_LOCALSTORAGE_CLEAR_DATE);
+  },
+
+
+
+// 숙박정보리스트 관련
+  /**
+   * 로컬스토리지의 스테이 리스트 저장
+   * @param {[]} festivalList
+   */
+  setStayList: (data) => {
+    localStorage.setItem(KEY_LOCALSTORAGE_STAY_LIST, JSON.stringify(data));
+  },
+  /**
+   * 로컬스토리지의 스테이 리스트 반환
+   * @returns {[]} festivalList
+   */
+  getStayList: () => {
+    return JSON.parse(localStorage.getItem(KEY_LOCALSTORAGE_STAY_LIST));
+  },
+  /**
+   * 로컬스토리지에 스테이 페이지 번호 저장
+   * @param {number} pageNo 
+   */
+  setStayPage: (pageNo) => {
+    localStorage.setItem(KEY_LOCALSTORAGE_STAY_PAGE, JSON.stringify(pageNo));
+  },
+  /**
+   * 로컬스토리지의 스테이 페이지 번호 반환
+   * @returns {number} 페이지 번호
+   */
+  getStayPage: () => {
+    return parseInt(localStorage.getItem(KEY_LOCALSTORAGE_STAY_PAGE));
+  },
+  /**
+   * 로컬스토리지에 스테이 스크롤 플래그 저장
+   * @param {boolean} flg 
+   */
+  setStayScrollFlg: (flg) => {
+    localStorage.setItem(KEY_LOCALSTORAGE_STAY_FLG, flg.toString());
+  },
+  /**
+   * 로컬스토리지의 스테이 스크롤 플래그 반환
+   * @returns {boolean} flg
+   */
+  getStayScrollFlg: () => {
+    return JSON.parse(localStorage.getItem(KEY_LOCALSTORAGE_STAY_FLG));
   }
-
-
-
-
-  // 역할 중심적 설계시 코드 작성 방법
-  // setLocalStorage: (key, data) => {
-  //   localStorage.setItem(key, JSON.stringify(data));
-  // },
-  // getLocalStorage: (key) => {
-  //   return localStorage.getItem(key);
-  // },
 }
