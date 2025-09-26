@@ -4,8 +4,18 @@
   box-sizing: border-box;
 }
 
+/* CSS에서의 변수 선언 (root라는 가상선택자, id root랑이랑은 전혀 상관없음)(어디서든 접근할수 있는 선택자임,root는 시작지점이라는 뜻) */
+:root {
+  /* 변수명은 무조건 `--변수명`로 시작 */
+  --personal-color-1: #000;
+  --personal-color-2: #fff;
+  --btn-big-width: 300px;
+  --btn-middle-width: 150px;
+}
+
 body {
-  background-color: #000;
+  /* 변수 사용: var(변수명) 호출 */
+  background-color: var(--personal-color-1);
 }
 
 #root {

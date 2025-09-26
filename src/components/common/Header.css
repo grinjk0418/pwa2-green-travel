@@ -1,6 +1,6 @@
 h1 {
   padding: 80px 0;
-  color: #fff;
-  font-size: 60px;
+  color: var(--personal-color-2);
+  font-size: calc(4rem - 5px);
   text-align: center;
 }

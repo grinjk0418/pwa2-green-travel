@@ -11,26 +11,25 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: '/',
+        index: true,
         element: <Main />
       },
       {
-        path: '/festivals',
+        path: 'festivals',
         element: <FestivalList />
       },
       {
-        path: '/festivals/:id', // 세그먼트 파라미터(segment parameter), id는 아무렇게나 작성자 맘대로...
+        path: 'festivals/:id', // 세그먼트 파라미터(segment parameter), id는 아무렇게나 작성자 맘대로...
         element: <FestivalShow />
       },
       {
-        path: '/stays',
+        path: 'stays',
         element: <StayList />
       },
       {
-        path: '/stays/:id',
+        path: 'stays/:id',
         element: <StayDetail />
       },
-
     ]
   }
 ]);
