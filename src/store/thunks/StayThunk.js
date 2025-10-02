@@ -28,5 +28,5 @@ const stayIndex = createAsyncThunk(
 );
 
 export { 
-  stayIndex 
+  stayIndex
 };

@@ -15,7 +15,7 @@ function FestivalShow() {
   // console.log(festivalList, params.id, item);
   
   useEffect(() => {
-    const item = festivalList.find(item => params.id === item.contentid);
+    const item = festivalList.find((item) => params.id === item.contentid);
     dispatch(setFestivalInfo(item));
   }, []);
 
