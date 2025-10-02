@@ -35,7 +35,7 @@ const staySlice = createSlice({
       .addMatcher(
         action => action.type.startsWith('staySlice') && action.type.endsWith('/pending'),
         (state, action) => {
-          console.error('에러에러.', action.error);
+          console.log('처리중입니다.', action.type);
         }
       )
       .addMatcher(
